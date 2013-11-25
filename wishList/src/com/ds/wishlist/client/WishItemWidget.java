@@ -33,10 +33,7 @@ public class WishItemWidget extends Composite {
 	private WishItem wishItem;
 	private WishListWidget parent;
 	private EventBus eventBus;
-
-	public WishItemWidget() {
-		initWidget(uiBinder.createAndBindUi(this));
-	}
+	
 
 	@UiField
 	Image photo;
@@ -103,7 +100,14 @@ public class WishItemWidget extends Composite {
 	Button done_button;
 	@UiField
 	Button cancel_button;
-
+	
+	/**
+	 * Creates a WishItem widget that display a data form WishItem object.
+	 * 
+	 * @param EventBus - a share event bus 
+	 * @param WishItem - an object which represents a data for displaying
+	 * @param WishListWidget - a parent WhishList container
+	 */
 	public WishItemWidget(EventBus ev, WishItem wi, WishListWidget p) {
 		eventBus = ev;
 		wishItem = wi;
