@@ -1,0 +1,151 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:style>
+		.input_wide {
+			width: 100%;
+			box-sizing: border-box;
+		}
+		.strong{
+			font-weight:bold;
+		}
+		.label {
+			width: 100px;
+			color: #999999;
+			font-style: italic;
+		}
+		.label_short {			
+			color: #999999;
+			font-style: italic;
+			margin-right:5px;
+		}
+		
+		.label_data {
+			max-width: 400px;
+			overflow: hidden;
+		}
+		
+		.label_data_height {
+			max-height: 1em;
+		}
+		
+		.cntr {
+			min-width: 350px;
+			max-width: 750px;
+			padding: 5px 10px;			
+		}
+		
+		.important {
+			font-weight: bold;
+		}
+		
+		.text_box {
+			width: 100%;
+		}
+		
+		.pad_top {
+			padding-top: 5px;
+		}
+		
+		.mar_left {
+			margin-left: 5px;
+		}
+		
+		.mar_top {
+			margin-top: 5px;
+		}
+		
+		.no_image {
+			background-color: #EEEEEE;
+			border: 1px dashed #CACACA;
+			margin-right: 10px;
+		}
+	</ui:style>
+
+	<g:FlowPanel addStyleNames="{style.cntr}">
+
+
+		<g:DockPanel width="100%" addStyleNames="hide_container">
+
+			<g:Dock direction="WEST" horizontalAlignment="ALIGN_CENTER">
+				<g:VerticalPanel width="100px" horizontalAlignment="ALIGN_CENTER"
+					height="100%">
+					<g:Image addStyleNames="{style.no_image}" ui:field="photo"
+						width="100px" />
+				</g:VerticalPanel>
+			</g:Dock>
+
+
+			<g:Dock direction="CENTER" width="100%" height="100%">
+				<g:VerticalPanel width="100%">
+
+					<g:Label ui:field="description_label" addStyleNames="{style.label}"
+						text="описание: " />
+					<g:Label addStyleNames="{style.strong} {style.label_data}" ui:field="description" />
+					<g:TextBox addStyleNames="{style.input_wide}" ui:field="description_edit" />
+					
+					<g:Label ui:field="notes_label" addStyleNames="{style.label}"
+						text="примечание: " />
+					<g:Label addStyleNames="{style.label_data}" ui:field="notes" />
+					<g:TextBox addStyleNames="{style.input_wide}" ui:field="notes_edit" />
+
+					<g:FlowPanel width="100%" ui:field="price_read_container">
+						<g:InlineLabel addStyleNames="{style.label_short}" text="цена: " ui:field="price_read_label"/>
+						<g:InlineLabel addStyleNames="{style.label_data}" ui:field="price" />
+					</g:FlowPanel>
+					<g:Label ui:field="price_label" addStyleNames="{style.label}"
+						text="цена: " />
+					<g:TextBox addStyleNames="{style.input_wide}" ui:field="price_edit" />
+
+
+					<g:FlowPanel width="100%" ui:field="reason_read_container">
+						<g:InlineLabel addStyleNames="{style.label_short}" text="повод: " ui:field="reason_read_label"/>						
+						<g:InlineLabel addStyleNames="{style.label_data}" ui:field="reason" />
+					</g:FlowPanel>
+					<g:Label ui:field="reason_label" addStyleNames="{style.label}"
+						text="повод: " />					
+					<g:TextBox addStyleNames="{style.input_wide}" ui:field="reason_edit" />
+
+
+					<g:Label ui:field="where_url_label" addStyleNames="{style.label}"
+						text="ссылка: " />
+					<g:Anchor addStyleNames="{style.label_data}" ui:field="where_url"/>
+					
+					<g:TextBox addStyleNames="{style.input_wide}" ui:field="where_url_edit" />
+
+					<g:FlowPanel width="100%" ui:field="where_read_container">
+						<g:InlineLabel addStyleNames="{style.label_short}" text="где купить: " ui:field="where_read_label"/>						
+						<g:InlineLabel addStyleNames="{style.label_data}" ui:field="where" />
+					</g:FlowPanel>
+					<g:Label ui:field="where_label" addStyleNames="{style.label}"
+						text="где купить: " />					
+					<g:TextBox addStyleNames="{style.input_wide}" ui:field="where_edit" />
+										
+				</g:VerticalPanel>
+			</g:Dock>
+			
+			<g:Dock direction="EAST">
+				<g:VerticalPanel width="40px" horizontalAlignment="ALIGN_RIGHT">
+					<g:Button styleName="hide_item image_button button_edit {style.mar_top}"
+						ui:field="edit_button" title="изменить"></g:Button>
+					<g:Button styleName="hide_item image_button button_delete {style.mar_top}"
+						ui:field="remove_button" title="удалить"></g:Button>
+				</g:VerticalPanel>
+			</g:Dock>
+
+			<g:Dock direction="SOUTH" horizontalAlignment="ALIGN_RIGHT">
+				<g:FlowPanel>
+					<g:HorizontalPanel horizontalAlignment="ALIGN_RIGHT">
+						<g:Button addStyleNames="{style.mar_left} {style.mar_top}" ui:field="done_button">готово</g:Button>
+						<g:Button addStyleNames="{style.mar_left} {style.mar_top}" ui:field="cancel_button">отмена</g:Button>
+					</g:HorizontalPanel>
+				</g:FlowPanel>
+			</g:Dock>
+
+		</g:DockPanel>
+
+	</g:FlowPanel>
+
+
+</ui:UiBinder> 
